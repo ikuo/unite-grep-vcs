@@ -79,7 +79,7 @@ function! s:source.gather_candidates(args, context) "{{{
     let a:context.is_async = 1
   endif
 
-  let cmdline = printf('git grep -n --no-color %s %s -- %s',
+  let cmdline = printf('git grep -n --no-color --ignore-case %s %s -- %s',
     \   a:context.source__extra_opts,
     \   string(a:context.source__input),
     \   unite#helper#join_targets(a:context.source__targets),
